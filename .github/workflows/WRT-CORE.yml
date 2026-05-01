@@ -162,7 +162,7 @@ jobs:
           $GITHUB_WORKSPACE/Scripts/Packages.sh
           $GITHUB_WORKSPACE/Scripts/Handles.sh
 
-            - name: Custom Settings
+      - name: Custom Settings
         run: |
           cd ./wrt/
 
@@ -171,15 +171,6 @@ jobs:
           else
             cat $GITHUB_WORKSPACE/Config/$WRT_CONFIG.txt $GITHUB_WORKSPACE/Config/GENERAL.txt >> .config
           fi
-
-          # 强制勾选 OAF 应用过滤 解决 is not set
-          echo "CONFIG_PACKAGE_luci-app-oaf=y" >> .config
-          echo "CONFIG_PACKAGE_appfilter=y" >> .config
-          echo "CONFIG_PACKAGE_kmod-oaf=y" >> .config
-
-          # 强制勾选 rtp2httpd
-          echo "CONFIG_PACKAGE_luci-app-rtp2httpd=y" >> .config
-          echo "CONFIG_PACKAGE_rtp2httpd=y" >> .config
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
 
