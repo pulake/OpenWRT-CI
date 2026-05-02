@@ -52,22 +52,15 @@ UPDATE_PACKAGE "aurora" "eamonxg/luci-theme-aurora" "master"
 UPDATE_PACKAGE "aurora-config" "eamonxg/luci-app-aurora-config" "master"
 UPDATE_PACKAGE "kucat" "sirpdboy/luci-theme-kucat" "master"
 UPDATE_PACKAGE "kucat-config" "sirpdboy/luci-app-kucat-config" "master"
-
 UPDATE_PACKAGE "passwall" "Openwrt-Passwall/openwrt-passwall" "main" "pkg"
-
-UPDATE_PACKAGE "diskman" "sbwml/luci-app-diskman" "main"
-UPDATE_PACKAGE "diskmanager" "4IceG/luci-app-mini-diskmanager" "main"
-UPDATE_PACKAGE "netspeedtest" "sirpdboy/netspeedtest" "main" "" "homebox ookla-speedtest"
+UPDATE_PACKAGE "ddns-go" "sirpdboy/luci-app-ddns-go" "main"
+UPDATE_PACKAGE "mosdns" "sbwml/luci-app-mosdns" "v5" "" "v2dat"
 UPDATE_PACKAGE "netwizard" "sirpdboy/luci-app-netwizard" "main"
-UPDATE_PACKAGE "openlist2" "sbwml/luci-app-openlist2" "main"
-UPDATE_PACKAGE "partexp" "sirpdboy/luci-app-partexp" "main"
 UPDATE_PACKAGE "quickfile" "sbwml/luci-app-quickfile" "main"
 UPDATE_PACKAGE "timecontrol" "sirpdboy/luci-app-timecontrol" "main"
 UPDATE_PACKAGE "viking" "VIKINGYFY/packages" "main" "" "gecoosac luci-app-timewol luci-app-wolplus"
-
-# ========== 新增：OAF应用过滤 + rtp2httpd ==========
- UPDATE_PACKAGE "OpenAppFilter" "destan19/OpenAppFilter" "master" "" "oaf luci-app-oaf"
- UPDATE_PACKAGE "rtp2httpd" "stackia/rtp2httpd" "main"
+UPDATE_PACKAGE "OpenAppFilter" "destan19/OpenAppFilter" "master" "" "oaf luci-app-oaf"
+UPDATE_PACKAGE "rtp2httpd" "stackia/rtp2httpd" "main"
  
 #更新软件包版本
 UPDATE_VERSION() {
