@@ -10,7 +10,19 @@ find ./feeds/luci/collections/ -type f -name "Makefile" -exec sed -i "s/luci-the
 find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js" -exec sed -i "s/192\.168\.[0-9]*\.[0-9]*/$WRT_IP/g" {} +
 #添加编译日期标识
 find ./feeds/luci/modules/luci-mod-status/ -type f -name "10_system.js" -exec sed -i "s/(\(luciversion || ''\))/(\1) + (' \/ $WRT_MARK-$WRT_DATE')/g" {} +
+# 强制勾选 rtp2httpd
+sed -i '/CONFIG_PACKAGE_luci-app-rtp2httpd/d' .config
+sed -i '/CONFIG_PACKAGE_rtp2httpd/d' .config
+echo "CONFIG_PACKAGE_luci-app-rtp2httpd=y" >> .config
+echo "CONFIG_PACKAGE_rtp2httpd=y" >> .config
 
+# 强制勾选 OAF 应用过滤
+sed -i '/CONFIG_PACKAGE_luci-app-oaf/d' .config
+sed -i '/CONFIG_PACKAGE_appfilter/d' .config
+sed -i '/CONFIG_PACKAGE_kmod-oaf/d' .config
+echo "CONFIG_PACKAGE_luci-app-oaf=y" >> .config
+echo "CONFIG_PACKAGE_appfilter=y" >> .config
+echo "CONFIG_PACKAGE_kmod-oaf=y" >> .config
 #修改默认WIFI账号密码
 WIFI_UC="./package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc"
 ROUTER_TOOL="./package/emortal/luci-app-router-tool/root/etc/config/router-tool"
