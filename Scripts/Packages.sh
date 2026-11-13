@@ -91,6 +91,8 @@ UPDATE_PACKAGE "mt5700" "LianXia233/luci-app-mt5700" "main"
 UPDATE_PACKAGE "mt5700m" "LianXia233/luci-app-mt5700m" "main"
 UPDATE_PACKAGE "netmonitor" "LianXia233/luci-app-netmonitor" "main"
 UPDATE_PACKAGE "qmodem-generic" "LianXia233/luci-app-qmodem-generic" "main"
+# 新增 OpenAppFilter (luci-app-appfilter + oaf)
+UPDATE_PACKAGE "open-app-filter" "destan19/OpenAppFilter" "master" "" "luci-app-appfilter oaf"
 
 #更新软件包版本
 UPDATE_VERSION() {
