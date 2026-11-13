@@ -189,7 +189,14 @@ jobs:
           else
             cat $GITHUB_WORKSPACE/Config/$WRT_CONFIG.txt $GITHUB_WORKSPACE/Config/GENERAL.txt >> .config
           fi
+ # 强制勾选 OAF 应用过滤
+          echo "CONFIG_PACKAGE_luci-app-oaf=y" >> .config
+          echo "CONFIG_PACKAGE_appfilter=y" >> .config
+          echo "CONFIG_PACKAGE_kmod-oaf=y" >> .config
 
+          # 强制勾选 rtp2httpd
+          echo "CONFIG_PACKAGE_luci-app-rtp2httpd=y" >> .config
+          echo "CONFIG_PACKAGE_rtp2httpd=y" >> .config
           $GITHUB_WORKSPACE/Scripts/Settings.sh
           $GITHUB_WORKSPACE/.github/scripts/prepare-build-host.sh
 
