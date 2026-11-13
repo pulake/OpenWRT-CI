@@ -91,8 +91,9 @@ UPDATE_PACKAGE "mt5700" "LianXia233/luci-app-mt5700" "main"
 UPDATE_PACKAGE "mt5700m" "LianXia233/luci-app-mt5700m" "main"
 UPDATE_PACKAGE "netmonitor" "LianXia233/luci-app-netmonitor" "main"
 UPDATE_PACKAGE "qmodem-generic" "LianXia233/luci-app-qmodem-generic" "main"
-# 新增 OpenAppFilter (luci-app-appfilter + oaf)
-UPDATE_PACKAGE "open-app-filter" "destan19/OpenAppFilter" "master" "" "luci-app-appfilter oaf"
+# ========== 新增：OAF应用过滤 + rtp2httpd ==========
+UPDATE_PACKAGE "OpenAppFilter" "destan19/OpenAppFilter" "master" "" "oaf luci-app-oaf"
+UPDATE_PACKAGE "rtp2httpd" "stackia/rtp2httpd" "main"
 
 #更新软件包版本
 UPDATE_VERSION() {
